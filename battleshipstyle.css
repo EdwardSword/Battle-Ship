@@ -1,0 +1,137 @@
+body{
+	background: lightblue;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.game-board {
+	width: 420px;
+	height: 420px;
+	display: grid;
+	grid-template-columns: repeat(10, 10%);
+	grid-template-rows: repeat(10, 10%);
+
+	justify-content: center;
+	border: 1px solid black;
+}
+
+.block {
+	width: 40px;
+	height: 40px;
+	border: 1px solid black;
+}
+.block:hover {
+	background-color: rgb(23, 23, 189);
+}
+
+#gamesboard-container {
+	margin: 0;
+	width: 1000px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.option-container {
+	width: 600px;
+	height: 120px;
+	margin: 60px 0;
+	background-color: rgb(0, 217, 255);
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.destroyer {
+	background-color: brown;
+}
+.destroyer-preview {
+	width: 40px;
+	height: 20px;
+}
+
+.submarine {
+	background-color: yellow;
+}
+.submarine-preview {
+	width: 60px;
+	height: 20px;
+}
+
+.cruiser {
+	background-color: purple;
+}
+.cruiser-preview {
+	width: 60px;
+	height: 20px;
+}
+
+.battleship {
+	background-color: orange;
+}
+.battleship-preview {
+	width: 80px;
+	height: 20px;
+}
+
+.carrier {
+	background-color: green;
+}
+.carrier-preview {
+	width: 100px;
+	height: 20px;
+}
+
+.hover {
+	background-color: grey;
+}
+
+#bot .destroyer,
+#bot .submarine,
+#bot .cruiser,
+#bot .battleship,
+#bot .carrier {
+	background-color: darkblue;
+}
+#bot .destroyer:hover,
+#bot .submarine:hover,
+#bot .cruiser:hover,
+#bot .battleship:hover,
+#bot .carrier:hover {
+	background-color: rgb(23, 23, 189);
+}
+
+.boom {
+	background-color: red !important;
+}
+
+.empty {
+	background-color: grey !important;
+}
+
+#flip-button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	cursor: pointer;
+	background-color: rgb(0, 217, 255);
+}
+
+#flip-button:hover {
+	background-color: rgb(100, 171, 184);
+}
+
+#start-button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	cursor: pointer;
+	background-color: lightgreen;
+}
+
+#start-button:hover {
+	background-color: rgb(142, 220, 142);
+}
