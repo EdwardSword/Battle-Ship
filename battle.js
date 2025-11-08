@@ -192,13 +192,13 @@ let playerTurn
 function startGame() {
 	if (playerTurn === undefined) {
 		if (optioncontainer.children.length != 0) {
-			infoDisplay.textContent = 'Finish placing all your ships first.'
+			infoDisplay.textContent = 'You need to place all your ships.'
 		} else {
 			const allBoardBlocks = document.querySelectorAll('#bot div')
 			allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
 			playerTurn = true
 			turnDisplay.textContent = 'Start the game!'
-			infoDisplay.textContent = 'Seriously, just start your turn already.'
+			infoDisplay.textContent = 'Click on your opponent\'s board to attack!'
 		}
 		
 		
@@ -217,7 +217,7 @@ function handleClick(e) {
 	if (!gameOver) {
 		if (e.target.classList.contains('taken')) {
 			e.target.classList.add('boom')
-			infoDisplay.textContent = "We have captured a command post!"
+			infoDisplay.textContent = "We have hit one of their ships!"
 			let classes = Array.from(e.target.classList)
 			classes = classes.filter(className => className !== 'block')
 			classes = classes.filter(className => className !== 'boom')
@@ -227,7 +227,7 @@ function handleClick(e) {
 			checkSore('player', playerHits, playerSunkShips) 
 		}
 		if (!e.target.classList.contains('taken')) {
-			infoDisplay.textContent = "We'll get them next time."
+			infoDisplay.textContent = "Better luck next time!"
 			e.target.classList.add('empty')
 			
 		}
@@ -243,7 +243,7 @@ function handleClick(e) {
 function botGo() {
 	if(!gameOver){
 		turnDisplay.textContent = "Bot's Turn."
-		infoDisplay.textContent = "The bot is coming for your ships."
+		infoDisplay.textContent = "The bot will make its move!"
 		
 		setTimeout(() => {
 			let randomGo = Math.floor(Math.random() * width * width)
@@ -271,8 +271,8 @@ function botGo() {
 		
 		setTimeout(() => {
 			playerTurn = true
-			turnDisplay.textContent = "Your turn."
-			infoDisplay.textContent = "Do you really need me to explain how to click on the bot's board?"
+			turnDisplay.textContent = "Your Move!"
+			infoDisplay.textContent = "Click on your opponent's board to attack!"
 			const allBoardBlocks = document.querySelectorAll('#bot div')
 			allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
 		}, 100) 
@@ -311,7 +311,3 @@ function checkSore(user, userHits, UserSS) {
 		gameOver = true
 	}
 }
-
-
-
-
